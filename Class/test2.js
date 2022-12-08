@@ -1,34 +1,38 @@
 class Person {
-  constructor(first,last) {
-    this.first = first
-    this.last = last
-    this.id = 0
+  static location = "대전"
+  
+  constructor() {
+    this.first = "한"
+    this.last = "용준"
+    this.type = "전기"
   }
-  get fullName(){
-    this.id += 1
-    return `${this.first} ${this.last}`
+  checkThis(){
+    return this;
   }
-  set fullName(value){
-    console.log("change FullName")
-    console.log(value)
-    const [firstName, lastName] =  value.split(' ')
-    this.first = firstName
-    this.last = lastName
+  whereInfo(){
+    return`\"${this.location}"\에 ${this.first}가 살고 있습니다`
   }
 }
+
+console.log(Person.location)
+console.log(Person.first)
+
+const a = new Person()
+console.log(a)
+console.dir(Person)
 // Person.fullName = "John Smith"
 
-let actor = new Person("Brendan","Fraser")
-console.log(actor)
+// let actor = new Person("Brendan","Fraser")
+// console.log(actor)
 
-actor.first = "Mike"
+// actor.first = "Mike"
 
-console.log(actor.fullName)
-actor.fullName = "Timothee Chalamet"
-actor.fullName = "Han Yongjun"
+// console.log(actor.fullName)
+// actor.fullName = "Timothee Chalamet"
+// actor.fullName = "Han Yongjun"
 
-console.log(actor.first)
-console.log(actor.last)
-console.log(actor.id)
-console.log(actor.fullName)
+// console.log(actor.first)
+// console.log(actor.last)
+// console.log(actor.id)
+// console.log(actor.fullName)
 
